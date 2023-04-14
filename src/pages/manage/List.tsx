@@ -1,8 +1,15 @@
 import React,{FC,useState} from "react";
-import QuestionCard from "../components/QuestionCard";
+import QuestionCard from "../../components/QuestionCard";
+import {useSearchParams} from 'react-router-dom'
 import styles from './List.module.scss'
 
+
 const List:FC = ()=>{
+
+    const [searchparams] = useSearchParams()
+    console.log(searchparams.get('key'));
+    
+
     const [list,setlist] = useState([
         {_id:'q1',title:'问卷1',isPublished:false,isStar:true,answerCount:3,createAt:'3月10日 13:23'},
         {_id:'q2',title:'问卷2',isPublished:true,isStar:false,answerCount:2,createAt:'3月10日 13:23'},
